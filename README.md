@@ -13,6 +13,25 @@ npm run build
 Danach liegen die fertigen Seiten als `index.html` plus eine Seite pro H2-Abschnitt
 im Root. Zusätzlich wird `search-index.json` erzeugt.
 
+## Auto-Build bei Änderungen (Copilot-freundlich)
+
+Für “änderung → sofort neu bauen” nutze:
+
+```bash
+npm run dev
+```
+
+Das beobachtet `CHEATSHEET.md` und startet automatisch `npm run build`.
+So kann GitHub Copilot (oder dein Workflow) Änderungen sofort als HTML sehen.
+
+## .env Beispiel
+
+Die Datei `.env` ist lokal (nicht im Repo). Beispiel:
+
+```
+.env.example
+```
+
 ## GitHub Pages
 
 1. Repo Settings → Pages

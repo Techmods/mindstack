@@ -5,11 +5,15 @@
   "private": true,
   "description": "Mindstack Ops Cheatsheet als statische Seite.",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "dev": "chokidar \"CHEATSHEET.md\" -c \"npm run build\""
   },
   "dependencies": {
     "github-slugger": "^2.0.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.0.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
   }
 }
