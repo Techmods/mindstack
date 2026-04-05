@@ -1,0 +1,15 @@
+{
+  "name": "mindstack-cheatsheet",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Mindstack Ops Cheatsheet als statische Seite.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "github-slugger": "^2.0.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.0.0"
+  }
+}

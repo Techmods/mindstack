@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <meta
+      name="description"
+      content="Mindstack Ops Cheatsheet – schnelle Befehlsreferenz als statische, responsive Seite."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Mindstack Ops</p>
+          <h1>{{title}}</h1>
+          <p class="lede">
+            Universelle Befehlsreferenz – gepflegt in Markdown, geliefert als
+            schnelle, responsive Seite.
+          </p>
+          <div class="meta">
+            <span>Quelle: <code>CHEATSHEET.md</code></span>
+            <span>Build: {{buildDate}}</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="layout">
+        <aside class="toc">
+          <div class="toc-desktop">
+            <div class="toc-title">Inhalt</div>
+            <nav aria-label="Inhaltsverzeichnis">{{toc}}</nav>
+          </div>
+          <details class="toc-mobile">
+            <summary>Inhalt anzeigen</summary>
+            <nav aria-label="Inhaltsverzeichnis mobil">{{toc}}</nav>
+          </details>
+        </aside>
+
+        <main class="content" id="content">{{content}}</main>
+      </section>
+
+      <footer class="footer">
+        <span>Static Cheatsheet • GitHub Pages ready</span>
+      </footer>
+    </div>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
