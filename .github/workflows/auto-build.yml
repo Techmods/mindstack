@@ -1,0 +1,45 @@
+name: Build Cheatsheet
+on:
+  push:
+    branches: [main]
+    paths:
+      - "CHEATSHEET.md"
+      - "scripts/**"
+      - "src/**"
+      - "assets/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/auto-build.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit build output
+        run: |
+          if git status --porcelain | grep -q .; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add *.html search-index.json
+            git commit -m "chore: auto-build cheatsheet [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi

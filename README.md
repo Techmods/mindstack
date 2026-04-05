@@ -24,6 +24,20 @@ npm run dev
 Das beobachtet `CHEATSHEET.md` und startet automatisch `npm run build`.
 So kann GitHub Copilot (oder dein Workflow) Änderungen sofort als HTML sehen.
 
+## Awesome Copilot (optional)
+
+Das Repo [github/awesome-copilot] bietet eine kuratierte Sammlung von Agents,
+Instructions, Skills, Hooks, Plugins und **Agentic Workflows** (Markdown-basierte
+Automations). Wir haben deshalb zusätzlich eine Workflow-Definition unter
+`workflows/cheatsheet-auto-build.md` abgelegt, falls du Copilot-Workflows nutzt.
+
+Install-Hinweis (aus der Doku):
+
+```bash
+copilot plugin marketplace add github/awesome-copilot
+copilot plugin install <plugin-name>@awesome-copilot
+```
+
 ## .env Beispiel
 
 Die Datei `.env` ist lokal (nicht im Repo). Beispiel:
