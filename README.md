@@ -38,6 +38,12 @@ copilot plugin marketplace add github/awesome-copilot
 copilot plugin install <plugin-name>@awesome-copilot
 ```
 
+Workflow starten (Copilot CLI ohne `workflow`-Subcommand):
+
+```bash
+copilot -i "Run the workflow defined in workflows/cheatsheet-auto-build.md"
+```
+
 ## .env Beispiel
 
 Die Datei `.env` ist lokal (nicht im Repo). Beispiel:
