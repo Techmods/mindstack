@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Systemanalyse",
+    "pageTitle": "Proxmox Host",
+    "snippet": "---",
+    "url": "proxmox-host.html#systemanalyse"
+  },
+  {
+    "title": "VM-Verwaltung (KVM/QEMU)",
+    "pageTitle": "Proxmox Host",
+    "snippet": "VMs werden mit  gesteuert. Jede VM hat eine numerische VMID (z.B. 101 für HAOS).                              ---",
+    "url": "proxmox-host.html#vm-verwaltung-kvmqemu"
+  },
+  {
+    "title": "Container-Verwaltung (LXC)",
+    "pageTitle": "Proxmox Host",
+    "snippet": "LXC-Container werden mit  gesteuert. Leichter als VMs, kein eigener Kernel.                      ---",
+    "url": "proxmox-host.html#container-verwaltung-lxc"
+  },
+  {
+    "title": "In Container einsteigen / verlassen",
+    "pageTitle": "Proxmox Host",
+    "snippet": "Das ist einer der häufigsten Stolperpunkte. Hier die drei Wege:            Merkhilfe:    = du gehst rein, bleibst drin bis     = du rufst wa",
+    "url": "proxmox-host.html#in-container-einsteigen--verlassen"
+  },
+  {
+    "title": "Speicher & Storage",
+    "pageTitle": "Proxmox Host",
+    "snippet": "---",
+    "url": "proxmox-host.html#speicher--storage"
+  },
+  {
+    "title": "Netzwerk (Proxmox)",
+    "pageTitle": "Proxmox Host",
+    "snippet": "---",
+    "url": "proxmox-host.html#netzwerk-proxmox"
+  },
+  {
+    "title": "Backup & Restore",
+    "pageTitle": "Proxmox Host",
+    "snippet": "---",
+    "url": "proxmox-host.html#backup--restore"
+  },
+  {
+    "title": "Updates & Repositories",
+    "pageTitle": "Proxmox Host",
+    "snippet": "---",
+    "url": "proxmox-host.html#updates--repositories"
+  },
+  {
+    "title": "Logs & Monitoring (Proxmox)",
+    "pageTitle": "Proxmox Host",
+    "snippet": "---",
+    "url": "proxmox-host.html#logs--monitoring-proxmox"
+  },
+  {
+    "title": "Proxmox Host",
+    "pageTitle": "Proxmox Host",
+    "snippet": "Zugang:   \nWeb-UI:   \nProxmox-Version: \n\n---\n\nSystemanalyse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n---\n\nVM-Verwaltung (KVM/QEMU)\n\nVMs werden mit  gesteuert. Jede VM hat ein",
+    "url": "proxmox-host.html"
+  },
+  {
+    "title": "Verbindung & Zugang",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "| Service | Adresse | Zugang | |---|---|---| | n8n | https://<N8NHOST| öffentlich | | OpenClaw Gateway | <WGSERVERIP:18789 | WireGuard | | Q",
+    "url": "vps-stack-contabo.html#verbindung--zugang"
+  },
+  {
+    "title": "Docker Compose Grundbefehle",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "Alle Compose-Befehle aus  ausführen.                                ---",
+    "url": "vps-stack-contabo.html#docker-compose-grundbefehle"
+  },
+  {
+    "title": "Stack-spezifische Dienste",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "---",
+    "url": "vps-stack-contabo.html#stack-spezifische-dienste"
+  },
+  {
+    "title": "OpenClaw / Clawd",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "---",
+    "url": "vps-stack-contabo.html#openclaw--clawd"
+  },
+  {
+    "title": "n8n",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "URL: https://<N8N_HOST  Daten-Volume:   ---",
+    "url": "vps-stack-contabo.html#n8n"
+  },
+  {
+    "title": "Postgres",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "---",
+    "url": "vps-stack-contabo.html#postgres"
+  },
+  {
+    "title": "Qdrant",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "Zugang: WireGuard erforderlich | API-Key via  in   ---",
+    "url": "vps-stack-contabo.html#qdrant"
+  },
+  {
+    "title": "Caddy",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "Cloudflare DNS: grauer Cloud (DNS only). Caddy übernimmt TLS direkt via Let's Encrypt.   Kein oranger Cloud (proxied) — sonst schlägt die AC",
+    "url": "vps-stack-contabo.html#caddy"
+  },
+  {
+    "title": "Backup VPS",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "---",
+    "url": "vps-stack-contabo.html#backup-vps"
+  },
+  {
+    "title": "VPS Stack (Contabo)",
+    "pageTitle": "VPS Stack (Contabo)",
+    "snippet": "Host:   \nWireGuard-IP:   \nStack-Verzeichnis:   \nGitHub-Repo: \n\n---\n\nVerbindung & Zugang\n\n\n\n\n\n\n\n| Service | Adresse | Zugang |\n|---|---|---|\n| n8n | https://<N8N",
+    "url": "vps-stack-contabo.html"
+  },
+  {
+    "title": "WireGuard",
+    "pageTitle": "WireGuard",
+    "snippet": "Server:  (VPS)  \nPeers: PC  | S25 Ultra  | Android Tablet \n\n\n\n\n\n\n\n\n\n\n\n\n\nWireGuard läuft auf dem VPS-Host direkt, nicht im Docker-Stack.  \nAlle WireGuard-gebunde",
+    "url": "wireguard.html"
+  },
+  {
+    "title": "Zugang & Shell",
+    "pageTitle": "Home Assistant",
+    "snippet": "---",
+    "url": "home-assistant.html#zugang--shell"
+  },
+  {
+    "title": "Konfiguration & Restart",
+    "pageTitle": "Home Assistant",
+    "snippet": "Konfig-Dateien: -  — Hauptkonfiguration -  — Tokens, Passwörter -  — Automatisierungen  ---",
+    "url": "home-assistant.html#konfiguration--restart"
+  },
+  {
+    "title": "Logs (Home Assistant)",
+    "pageTitle": "Home Assistant",
+    "snippet": "ist ein eingebauter Service.   Aufruf in Automationen:  — nicht als -Platform konfigurieren.  ---",
+    "url": "home-assistant.html#logs-home-assistant"
+  },
+  {
+    "title": "Home Assistant",
+    "pageTitle": "Home Assistant",
+    "snippet": "VM: 101 | IP:  | RAM: 8192 MB  \nWeb-UI: http://<HA_HOST:8123  \nUSB-Passthrough: SONOFF ZBDongle-P (Zigbee-Koordinator)\n\n---\n\nZugang & Shell\n\n\n\n\n\n\n\n---\n\nKonfigur",
+    "url": "home-assistant.html"
+  },
+  {
+    "title": "Zigbee / Zigbee2MQTT",
+    "pageTitle": "Zigbee / Zigbee2MQTT",
+    "snippet": "Koordinator: SONOFF ZBDongle-P (USB-Passthrough in VM 101)  \nZugang: Zigbee2MQTT läuft als HAOS Add-on\n\n\n\n\n\n\n\nIKEA-Geräte sind konservativ bei Routenwechseln.  ",
+    "url": "zigbee--zigbee2mqtt.html"
+  },
+  {
+    "title": "InfluxDB",
+    "pageTitle": "InfluxDB",
+    "snippet": "CT: 210 | IP:  | Port: 8086  \nWeb-UI: http://<INFLUX_HOST:8086  \nOrg:  | Bucket:  | Retention: 43800h (5 Jahre)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFlux-Query Grundstruktur:\n\n\nGra",
+    "url": "influxdb.html"
+  },
+  {
+    "title": "Grafana",
+    "pageTitle": "Grafana",
+    "snippet": "CT: 211 | IP:  | Port: 3000  \nWeb-UI: http://<GRAFANA_HOST:3000\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatasource-Konfiguration (InfluxDB):\n\n\n---",
+    "url": "grafana.html"
+  },
+  {
+    "title": "Git & GitHub",
+    "pageTitle": "Git & GitHub",
+    "snippet": "Repo VPS-Stack:   \nAuthentifizierung: SSH-Key auf VPS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n---",
+    "url": "git--github.html"
+  },
+  {
+    "title": "Netzwerk allgemein",
+    "pageTitle": "Netzwerk allgemein",
+    "snippet": "Router: Fritz!Box 7690 |   \nSubnetz:   \nNAS: Buffalo LinkStation \"Datengrab\" |  | SMB 2.0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n---",
+    "url": "netzwerk-allgemein.html"
+  },
+  {
+    "title": "System allgemein (Linux)",
+    "pageTitle": "System allgemein (Linux)",
+    "snippet": "---",
+    "url": "system-allgemein-linux.html"
+  },
+  {
+    "title": "Glossar / Konzepte",
+    "pageTitle": "Glossar / Konzepte",
+    "snippet": "| Begriff | Bedeutung |\n|---|---|\n|  | Proxmox Container Tool — steuert LXC-Container |\n|  | QEMU Manager — steuert KVM/QEMU-VMs |\n|  | Proxmox API-Shell — dire",
+    "url": "glossar--konzepte.html"
+  }
+]

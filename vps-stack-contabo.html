@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VPS Stack (Contabo)</title>
+    <meta
+      name="description"
+      content="Mindstack Ops Cheatsheet – schnelle Befehlsreferenz als statische, responsive Seite."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="page-shell page-section">
+    <div class="page">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <a href="index.html" aria-label="Zur Startseite">
+            <span><span class="brand-dot"></span> MindStack Ops</span>
+          </a>
+        </div>
+        <nav class="site-nav">
+          <div class="search-wrap">
+            <input
+              type="search"
+              class="search-input"
+              id="global-search"
+              placeholder="Suchen (Befehle, Abschnitte, Seiten)..."
+              aria-label="Globale Suche"
+            />
+            <div class="search-results" id="search-results" aria-live="polite"></div>
+          </div>
+          <button class="button" id="layout-toggle" type="button">Layout: Zentriert</button>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Umgebung</p>
+          <h1>VPS Stack (Contabo)</h1>
+          <p class="lede">Host:   
+WireGuard-IP:   
+Stack-Verzeichnis:   
+GitHub-Repo: 
+
+---
+
+Verbindung &amp; Zugang
+
+
+
+
+
+
+
+| Service | Adresse | Zugang |
+|---|---|---|
+| n8n | https://&lt;N8N</p>
+          <div class="meta">
+            <span>Stand: 2026-04</span>
+            <span>Build: 05.04.2026, 19:04</span>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="toc">
+          <div class="toc-desktop">
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation"><a href="proxmox-host.html" class="">Proxmox Host</a>
+<a href="vps-stack-contabo.html" class="is-active">VPS Stack (Contabo)</a>
+<a href="wireguard.html" class="">WireGuard</a>
+<a href="home-assistant.html" class="">Home Assistant</a>
+<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
+<a href="influxdb.html" class="">InfluxDB</a>
+<a href="grafana.html" class="">Grafana</a>
+<a href="git--github.html" class="">Git &amp; GitHub</a>
+<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
+<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
+            <details class="toc-sections" open>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis"><ul class="toc-list">
+<li class="toc-item level-3"><a href="#verbindung--zugang">Verbindung &amp; Zugang</a></li>
+<li class="toc-item level-3"><a href="#docker-compose-grundbefehle">Docker Compose Grundbefehle</a></li>
+<li class="toc-item level-3"><a href="#stack-spezifische-dienste">Stack-spezifische Dienste</a></li>
+<li class="toc-item level-3"><a href="#openclaw--clawd">OpenClaw / Clawd</a></li>
+<li class="toc-item level-3"><a href="#n8n">n8n</a></li>
+<li class="toc-item level-3"><a href="#postgres">Postgres</a></li>
+<li class="toc-item level-3"><a href="#qdrant">Qdrant</a></li>
+<li class="toc-item level-3"><a href="#caddy">Caddy</a></li>
+<li class="toc-item level-3"><a href="#backup-vps">Backup VPS</a></li>
+</ul></nav>
+              </div>
+            </details>
+          </div>
+          <details class="toc-mobile">
+            <summary>Inhalt anzeigen</summary>
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation mobil"><a href="proxmox-host.html" class="">Proxmox Host</a>
+<a href="vps-stack-contabo.html" class="is-active">VPS Stack (Contabo)</a>
+<a href="wireguard.html" class="">WireGuard</a>
+<a href="home-assistant.html" class="">Home Assistant</a>
+<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
+<a href="influxdb.html" class="">InfluxDB</a>
+<a href="grafana.html" class="">Grafana</a>
+<a href="git--github.html" class="">Git &amp; GitHub</a>
+<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
+<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
+            <details class="toc-sections" open>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter-mobile"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern mobil"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis mobil"><ul class="toc-list">
+<li class="toc-item level-3"><a href="#verbindung--zugang">Verbindung &amp; Zugang</a></li>
+<li class="toc-item level-3"><a href="#docker-compose-grundbefehle">Docker Compose Grundbefehle</a></li>
+<li class="toc-item level-3"><a href="#stack-spezifische-dienste">Stack-spezifische Dienste</a></li>
+<li class="toc-item level-3"><a href="#openclaw--clawd">OpenClaw / Clawd</a></li>
+<li class="toc-item level-3"><a href="#n8n">n8n</a></li>
+<li class="toc-item level-3"><a href="#postgres">Postgres</a></li>
+<li class="toc-item level-3"><a href="#qdrant">Qdrant</a></li>
+<li class="toc-item level-3"><a href="#caddy">Caddy</a></li>
+<li class="toc-item level-3"><a href="#backup-vps">Backup VPS</a></li>
+</ul></nav>
+              </div>
+            </details>
+          </details>
+        </aside>
+
+        <main class="content" id="content"><p><strong>Host:</strong> <code>&lt;VPS_HOST&gt;</code><br>
+<strong>WireGuard-IP:</strong> <code>&lt;WG_SERVER_IP&gt;</code><br>
+<strong>Stack-Verzeichnis:</strong> <code>~/stack/</code><br>
+<strong>GitHub-Repo:</strong> <code>github.com/Techmods/vps-stack</code></p>
+<hr>
+<h3 id="verbindung--zugang" tabindex="-1">Verbindung &amp; Zugang</h3>
+<pre><code class="language-bash"># SSH via WireGuard-Alias (bevorzugt)
+ssh VPS_Contabo_WG
+</code></pre>
+<pre><code class="language-bash"># SSH direkt (ohne WireGuard)
+ssh root@&lt;VPS_HOST&gt;
+</code></pre>
+<pre><code class="language-bash"># WireGuard muss aktiv sein für:
+# - OpenClaw Gateway  &lt;WG_SERVER_IP&gt;:18789
+# - Qdrant            &lt;WG_SERVER_IP&gt;:6333
+# - Portainer         &lt;WG_SERVER_IP&gt;:9000
+# - Netdata           &lt;WG_SERVER_IP&gt;:19999
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Adresse</th>
+<th>Zugang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n8n</td>
+<td>https://&lt;N8N_HOST&gt;</td>
+<td>öffentlich</td>
+</tr>
+<tr>
+<td>OpenClaw Gateway</td>
+<td>&lt;WG_SERVER_IP&gt;:18789</td>
+<td>WireGuard</td>
+</tr>
+<tr>
+<td>Qdrant</td>
+<td>&lt;WG_SERVER_IP&gt;:6333</td>
+<td>WireGuard</td>
+</tr>
+<tr>
+<td>Portainer</td>
+<td>&lt;WG_SERVER_IP&gt;:9000</td>
+<td>WireGuard</td>
+</tr>
+<tr>
+<td>Netdata</td>
+<td>&lt;WG_SERVER_IP&gt;:19999</td>
+<td>WireGuard</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="docker-compose-grundbefehle" tabindex="-1">Docker Compose Grundbefehle</h3>
+<p>Alle Compose-Befehle aus <code>~/stack/</code> ausführen.</p>
+<pre><code class="language-bash">cd ~/stack
+</code></pre>
+<pre><code class="language-bash"># Status aller Container (Name, Status, Health, Ports)
+docker compose ps
+</code></pre>
+<pre><code class="language-bash"># Alle Container starten
+docker compose up -d
+</code></pre>
+<pre><code class="language-bash"># Alle Container stoppen (Container bleiben erhalten, nur gestoppt)
+docker compose stop
+</code></pre>
+<pre><code class="language-bash"># Alle Container stoppen UND entfernen (Volumes bleiben)
+docker compose down
+</code></pre>
+<pre><code class="language-bash"># Einzelnen Service neu starten
+docker compose restart openclaw
+</code></pre>
+<pre><code class="language-bash"># Einzelnen Service neu bauen und starten (z.B. nach Dockerfile-Änderung)
+docker compose build --pull openclaw &amp;&amp; docker compose up -d openclaw
+</code></pre>
+<pre><code class="language-bash"># Logs aller Services (letzte 100 Zeilen)
+docker compose logs --tail=100
+</code></pre>
+<pre><code class="language-bash"># Logs eines einzelnen Services live verfolgen
+docker compose logs -f n8n
+</code></pre>
+<pre><code class="language-bash"># Shell in laufendem Container öffnen
+docker compose exec -it openclaw bash
+</code></pre>
+<pre><code class="language-bash"># Einmaligen Befehl in Container ausführen (ohne reinzugehen)
+docker compose exec openclaw openclaw status
+</code></pre>
+<pre><code class="language-bash"># Container komplett neu erstellen (z.B. bei hartem Fehler)
+docker compose up -d --force-recreate openclaw
+</code></pre>
+<pre><code class="language-bash"># Docker-Ressourcenübersicht (Images, Volumes, Cache)
+docker system df
+</code></pre>
+<pre><code class="language-bash"># Aufräumen: gestoppte Container + dangling Images
+docker system prune -f
+</code></pre>
+<pre><code class="language-bash"># Aufräumen: ungenutzte Volumes (WARNUNG: Datenverlust möglich)
+docker volume prune -f
+</code></pre>
+<hr>
+<h3 id="stack-spezifische-dienste" tabindex="-1">Stack-spezifische Dienste</h3>
+<pre><code class="language-bash"># Schnell-Healthcheck aller relevanten Endpunkte
+curl -fsS http://&lt;WG_SERVER_IP&gt;:18789/healthz   # OpenClaw
+curl -fsS http://&lt;WG_SERVER_IP&gt;:6333/healthz    # Qdrant
+curl -fsS http://&lt;WG_SERVER_IP&gt;:19999/api/v1/info  # Netdata
+</code></pre>
+<pre><code class="language-bash"># Alles auf einen Blick
+docker compose ps &amp;&amp; docker compose exec openclaw openclaw gateway status
+</code></pre>
+<hr>
+<h3 id="openclaw--clawd" tabindex="-1">OpenClaw / Clawd</h3>
+<pre><code class="language-bash"># WICHTIG: Nie &quot;openclaw update&quot; im Container ausführen!
+# Stattdessen immer:
+docker compose build --pull openclaw &amp;&amp; docker compose up -d openclaw
+</code></pre>
+<pre><code class="language-bash"># Status
+docker compose exec openclaw openclaw status
+docker compose exec openclaw openclaw gateway status
+</code></pre>
+<pre><code class="language-bash"># Channels prüfen (mit Verbindungstest)
+docker compose exec openclaw openclaw channels status --probe
+</code></pre>
+<pre><code class="language-bash"># Agents auflisten
+docker compose exec openclaw openclaw agents list
+</code></pre>
+<pre><code class="language-bash"># Skills auflisten
+docker compose exec openclaw openclaw skills list
+</code></pre>
+<pre><code class="language-bash"># Diagnose und Auto-Fix
+docker compose exec openclaw openclaw doctor --fix
+</code></pre>
+<pre><code class="language-bash"># Konfiguration anzeigen
+docker compose exec openclaw cat /home/node/.openclaw/config/openclaw.json
+</code></pre>
+<pre><code class="language-bash"># Konfigurationswert setzen (nicht per heredoc, direkt)
+docker compose exec openclaw openclaw config set &lt;key&gt; &lt;value&gt;
+</code></pre>
+<pre><code class="language-bash"># Datenpfad (Bind Mount, überlebt down/up)
+# ~/openclaw-data/
+</code></pre>
+<hr>
+<h3 id="n8n" tabindex="-1">n8n</h3>
+<pre><code class="language-bash"># Logs
+docker compose logs --tail=100 n8n
+</code></pre>
+<pre><code class="language-bash"># Shell im Container
+docker compose exec -it n8n sh
+</code></pre>
+<pre><code class="language-bash"># n8n CLI (im Container)
+docker compose exec n8n n8n --help
+</code></pre>
+<pre><code class="language-bash"># Workflow exportieren (im Container)
+docker compose exec n8n n8n export:workflow --all --output=/home/node/exports/
+</code></pre>
+<p><strong>URL:</strong> https://&lt;N8N_HOST&gt;<br>
+<strong>Daten-Volume:</strong> <code>n8n_data</code></p>
+<hr>
+<h3 id="postgres" tabindex="-1">Postgres</h3>
+<pre><code class="language-bash"># Verbindung testen
+docker compose exec postgres pg_isready -U n8n
+</code></pre>
+<pre><code class="language-bash"># psql-Shell öffnen
+docker compose exec postgres psql -U n8n -d n8n
+</code></pre>
+<pre><code class="language-bash"># Datenbankgröße anzeigen (in psql)
+\l+
+</code></pre>
+<pre><code class="language-bash"># psql verlassen
+\q
+</code></pre>
+<pre><code class="language-bash"># Tabellen auflisten (in psql)
+\dt
+</code></pre>
+<pre><code class="language-bash"># Backup der n8n-Datenbank
+docker compose exec postgres pg_dump -U n8n n8n &gt; ~/stack/backups/n8n-$(date +%Y%m%d).sql
+</code></pre>
+<hr>
+<h3 id="qdrant" tabindex="-1">Qdrant</h3>
+<pre><code class="language-bash"># Collections auflisten
+curl -s http://&lt;WG_SERVER_IP&gt;:6333/collections | jq .
+</code></pre>
+<pre><code class="language-bash"># Details einer Collection
+curl -s http://&lt;WG_SERVER_IP&gt;:6333/collections/session-logs | jq .
+</code></pre>
+<pre><code class="language-bash"># Logs
+docker compose logs --tail=100 qdrant
+</code></pre>
+<p><strong>Zugang:</strong> WireGuard erforderlich | API-Key via <code>QDRANT_API_KEY</code> in <code>.env</code></p>
+<hr>
+<h3 id="caddy" tabindex="-1">Caddy</h3>
+<pre><code class="language-bash"># Caddy-Konfiguration validieren (ohne Neustart)
+docker compose exec caddy caddy validate --config /etc/caddy/Caddyfile
+</code></pre>
+<pre><code class="language-bash"># Caddy neu laden (TLS-Zertifikate etc., ohne Neustart)
+docker compose exec caddy caddy reload --config /etc/caddy/Caddyfile
+</code></pre>
+<pre><code class="language-bash"># Logs
+docker compose logs --tail=50 caddy
+</code></pre>
+<blockquote>
+<p>Cloudflare DNS: grauer Cloud (DNS only). Caddy übernimmt TLS direkt via Let’s Encrypt.<br>
+Kein oranger Cloud (proxied) — sonst schlägt die ACME-Challenge fehl.</p>
+</blockquote>
+<hr>
+<h3 id="backup-vps" tabindex="-1">Backup VPS</h3>
+<pre><code class="language-bash"># OpenClaw-Daten sichern
+tar czf ~/openclaw-backup-$(date +%Y%m%d).tgz ~/openclaw-data/
+</code></pre>
+<pre><code class="language-bash"># Docker Volumes sichern (n8n, Postgres, Qdrant)
+docker run --rm \
+  -v n8n_data:/src/n8n_data \
+  -v postgres_data:/src/postgres_data \
+  -v qdrant_data:/src/qdrant_data \
+  -v $(pwd)/backups:/dst \
+  alpine tar czf /dst/volumes-$(date +%Y%m%d).tgz -C /src .
+</code></pre>
+<pre><code class="language-bash"># Stack-Repo sichern (git pull reicht meist)
+cd ~/stack &amp;&amp; git pull
+</code></pre>
+<hr>
+</main>
+      </section>
+
+      <footer class="footer">
+        <span>Static Cheatsheet • GitHub Pages ready</span>
+      </footer>
+    </div>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

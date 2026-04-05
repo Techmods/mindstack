@@ -1,7 +1,7 @@
 # MindStack Cheatsheet (Static)
 
-Dieses Repo generiert aus `CHEATSHEET.md` eine statische, responsive HTML-Seite
-mit Inhaltsverzeichnis und Copy-Buttons für Codeblöcke.
+Dieses Repo generiert aus `CHEATSHEET.md` eine statische, responsive Multi-Page-Seite
+mit Navigation, Suche, Inhaltsverzeichnis und Copy-Buttons pro Befehl.
 
 ## Nutzung
 
@@ -10,7 +10,8 @@ npm install
 npm run build
 ```
 
-Danach liegt die fertige Seite als `index.html` im Root.
+Danach liegen die fertigen Seiten als `index.html` plus eine Seite pro H2-Abschnitt
+im Root. Zusätzlich wird `search-index.json` erzeugt.
 
 ## GitHub Pages
 

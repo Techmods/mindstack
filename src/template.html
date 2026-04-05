@@ -11,37 +11,83 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  <body>
+  <body class="page-shell {{bodyClass}}">
     <div class="page">
-      <header class="hero">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <a href="index.html" aria-label="Zur Startseite">
+            <span><span class="brand-dot"></span> MindStack Ops</span>
+          </a>
+        </div>
+        <nav class="site-nav">
+          <div class="search-wrap">
+            <input
+              type="search"
+              class="search-input"
+              id="global-search"
+              placeholder="Suchen (Befehle, Abschnitte, Seiten)..."
+              aria-label="Globale Suche"
+            />
+            <div class="search-results" id="search-results" aria-live="polite"></div>
+          </div>
+          <button class="button" id="layout-toggle" type="button">Layout: Zentriert</button>
+        </nav>
+      </header>
+
+      <section class="hero">
         <div class="hero-inner">
-          <p class="eyebrow">Mindstack Ops</p>
+          <p class="eyebrow">{{eyebrow}}</p>
           <h1>{{title}}</h1>
-          <p class="lede">
-            Universelle Befehlsreferenz – gepflegt in Markdown, geliefert als
-            schnelle, responsive Seite.
-          </p>
+          <p class="lede">{{lede}}</p>
           <div class="meta">
-            <span>Quelle: <code>CHEATSHEET.md</code></span>
+            <span>Stand: {{stand}}</span>
             <span>Build: {{buildDate}}</span>
+            {{version}}
           </div>
         </div>
-      </header>
+      </section>
 
       <section class="layout">
         <aside class="toc">
           <div class="toc-desktop">
-            <div class="toc-title">Inhalt</div>
-            <nav aria-label="Inhaltsverzeichnis">{{toc}}</nav>
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation">{{pageNav}}</nav>
+            <details class="toc-sections" {{tocOpen}}>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis">{{toc}}</nav>
+              </div>
+            </details>
           </div>
           <details class="toc-mobile">
             <summary>Inhalt anzeigen</summary>
-            <nav aria-label="Inhaltsverzeichnis mobil">{{toc}}</nav>
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation mobil">{{pageNav}}</nav>
+            <details class="toc-sections" {{tocOpen}}>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter-mobile"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern mobil"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis mobil">{{toc}}</nav>
+              </div>
+            </details>
           </details>
         </aside>
 

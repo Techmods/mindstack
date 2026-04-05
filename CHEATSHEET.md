@@ -45,8 +45,8 @@
 
 ## Proxmox Host
 
-**Zugang:** `ssh root@192.168.178.200`  
-**Web-UI:** `https://192.168.178.200:8006`  
+**Zugang:** `ssh root@<PROXMOX_HOST>`  
+**Web-UI:** `https://<PROXMOX_HOST>:8006`  
 **Proxmox-Version:** `pve-manager/8.4.16`
 
 ---
@@ -280,7 +280,7 @@ pve-firewall status
 pve-firewall compile
 
 # Paketmitschnitt auf Bridge (Diagnose)
-tcpdump -i vmbr0 -n host 192.168.178.220
+tcpdump -i vmbr0 -n host <HA_HOST>
 ```
 
 ---
@@ -364,8 +364,8 @@ pvesh get /nodes/pve/status
 
 ## VPS Stack (Contabo)
 
-**Host:** `167.86.73.241`  
-**WireGuard-IP:** `10.0.0.1`  
+**Host:** `<VPS_HOST>`  
+**WireGuard-IP:** `<WG_SERVER_IP>`  
 **Stack-Verzeichnis:** `~/stack/`  
 **GitHub-Repo:** `github.com/Techmods/vps-stack`
 
@@ -378,22 +378,22 @@ pvesh get /nodes/pve/status
 ssh VPS_Contabo_WG
 
 # SSH direkt (ohne WireGuard)
-ssh root@167.86.73.241
+ssh root@<VPS_HOST>
 
 # WireGuard muss aktiv sein für:
-# - OpenClaw Gateway  10.0.0.1:18789
-# - Qdrant            10.0.0.1:6333
-# - Portainer         10.0.0.1:9000
-# - Netdata           10.0.0.1:19999
+# - OpenClaw Gateway  <WG_SERVER_IP>:18789
+# - Qdrant            <WG_SERVER_IP>:6333
+# - Portainer         <WG_SERVER_IP>:9000
+# - Netdata           <WG_SERVER_IP>:19999
 ```
 
 | Service | Adresse | Zugang |
 |---|---|---|
-| n8n | https://n8n.tmods.dev | öffentlich |
-| OpenClaw Gateway | 10.0.0.1:18789 | WireGuard |
-| Qdrant | 10.0.0.1:6333 | WireGuard |
-| Portainer | 10.0.0.1:9000 | WireGuard |
-| Netdata | 10.0.0.1:19999 | WireGuard |
+| n8n | https://<N8N_HOST> | öffentlich |
+| OpenClaw Gateway | <WG_SERVER_IP>:18789 | WireGuard |
+| Qdrant | <WG_SERVER_IP>:6333 | WireGuard |
+| Portainer | <WG_SERVER_IP>:9000 | WireGuard |
+| Netdata | <WG_SERVER_IP>:19999 | WireGuard |
 
 ---
 
@@ -453,9 +453,9 @@ docker volume prune -f
 
 ```bash
 # Schnell-Healthcheck aller relevanten Endpunkte
-curl -fsS http://10.0.0.1:18789/healthz   # OpenClaw
-curl -fsS http://10.0.0.1:6333/healthz    # Qdrant
-curl -fsS http://10.0.0.1:19999/api/v1/info  # Netdata
+curl -fsS http://<WG_SERVER_IP>:18789/healthz   # OpenClaw
+curl -fsS http://<WG_SERVER_IP>:6333/healthz    # Qdrant
+curl -fsS http://<WG_SERVER_IP>:19999/api/v1/info  # Netdata
 
 # Alles auf einen Blick
 docker compose ps && docker compose exec openclaw openclaw gateway status
@@ -514,7 +514,7 @@ docker compose exec n8n n8n --help
 docker compose exec n8n n8n export:workflow --all --output=/home/node/exports/
 ```
 
-**URL:** https://n8n.tmods.dev  
+**URL:** https://<N8N_HOST>  
 **Daten-Volume:** `n8n_data`
 
 ---
@@ -547,10 +547,10 @@ docker compose exec postgres pg_dump -U n8n n8n > ~/stack/backups/n8n-$(date +%Y
 
 ```bash
 # Collections auflisten
-curl -s http://10.0.0.1:6333/collections | jq .
+curl -s http://<WG_SERVER_IP>:6333/collections | jq .
 
 # Details einer Collection
-curl -s http://10.0.0.1:6333/collections/session-logs | jq .
+curl -s http://<WG_SERVER_IP>:6333/collections/session-logs | jq .
 
 # Logs
 docker compose logs --tail=100 qdrant
@@ -600,8 +600,8 @@ cd ~/stack && git pull
 
 ## WireGuard
 
-**Server:** `10.0.0.1` (VPS)  
-**Peers:** PC `10.0.0.2` | S25 Ultra `10.0.0.3` | Android Tablet `10.0.0.4`
+**Server:** `<WG_SERVER_IP>` (VPS)  
+**Peers:** PC `<WG_PC_IP>` | S25 Ultra `<WG_PHONE_IP>` | Android Tablet `<WG_TABLET_IP>`
 
 ```bash
 # Status und verbundene Peers anzeigen
@@ -618,7 +618,7 @@ wg-quick down wg0
 cat /etc/wireguard/wg0.conf
 
 # Verbindungstest zu einem Peer
-ping 10.0.0.2
+ping <WG_PC_IP>
 
 # Handshake-Zeitstempel prüfen (wann zuletzt verbunden)
 wg show wg0 latest-handshakes
@@ -631,8 +631,8 @@ wg show wg0 latest-handshakes
 
 ## Home Assistant
 
-**VM:** 101 | **IP:** `192.168.178.220` | **RAM:** 8192 MB  
-**Web-UI:** http://192.168.178.220:8123  
+**VM:** 101 | **IP:** `<HA_HOST>` | **RAM:** 8192 MB  
+**Web-UI:** http://<HA_HOST>:8123  
 **USB-Passthrough:** SONOFF ZBDongle-P (Zigbee-Koordinator)
 
 ---
@@ -644,7 +644,7 @@ wg show wg0 latest-handshakes
 # Methode 1: Proxmox Console (Web-UI → VM 101 → Console)
 
 # Methode 2: SSH direkt (wenn SSH-Add-on installiert)
-ssh root@192.168.178.220
+ssh root@<HA_HOST>
 
 # Methode 3: Terminal über Home Assistant Web-UI
 # Add-ons → Terminal & SSH → Öffnen
@@ -708,7 +708,7 @@ ha supervisor logs
 
 ```bash
 # Z2M Web-UI
-# http://192.168.178.220:8099 (oder über HA Add-on)
+# http://<HA_HOST>:8099 (oder über HA Add-on)
 
 # Add-on neu starten (bei Koordinator-Problemen)
 ha addons restart core_zigbee2mqtt
@@ -724,8 +724,8 @@ ha addons logs core_zigbee2mqtt
 
 ## InfluxDB
 
-**CT:** 210 | **IP:** `192.168.178.212` | **Port:** 8086  
-**Web-UI:** http://192.168.178.212:8086  
+**CT:** 210 | **IP:** `<INFLUX_HOST>` | **Port:** 8086  
+**Web-UI:** http://<INFLUX_HOST>:8086  
 **Org:** `HomeLab` | **Bucket:** `homeassistant` | **Retention:** 43800h (5 Jahre)
 
 ```bash
@@ -748,7 +748,7 @@ influx backup --bucket homeassistant /backup/influxdb/$(date +%Y%m%d)
 influx auth list
 
 # Datenfluss testen (von Host oder HA)
-curl -s http://192.168.178.212:8086/health
+curl -s http://<INFLUX_HOST>:8086/health
 
 # Container verlassen
 exit
@@ -769,8 +769,8 @@ from(bucket: "homeassistant")
 
 ## Grafana
 
-**CT:** 211 | **IP:** `192.168.178.213` | **Port:** 3000  
-**Web-UI:** http://192.168.178.213:3000
+**CT:** 211 | **IP:** `<GRAFANA_HOST>` | **Port:** 3000  
+**Web-UI:** http://<GRAFANA_HOST>:3000
 
 ```bash
 # In den Container einsteigen
@@ -795,7 +795,7 @@ exit
 **Datasource-Konfiguration (InfluxDB):**
 ```
 Query Language: Flux
-URL:            http://192.168.178.212:8086
+URL:            http://<INFLUX_HOST>:8086
 Basic Auth:     aus
 Organization:   HomeLab
 Token:          <aus secrets.yaml>
@@ -854,9 +854,9 @@ git remote -v
 
 ## Netzwerk allgemein
 
-**Router:** Fritz!Box 7690 | `192.168.178.1`  
+**Router:** Fritz!Box 7690 | `<ROUTER_IP>`  
 **Subnetz:** `192.168.178.x`  
-**NAS:** Buffalo LinkStation "Datengrab" | `192.168.178.250` | SMB 2.0
+**NAS:** Buffalo LinkStation "Datengrab" | `<NAS_IP>` | SMB 2.0
 
 ```bash
 # IP-Adressen und Interfaces
@@ -870,19 +870,19 @@ dig google.com
 nslookup google.com
 
 # Erreichbarkeit testen
-ping 192.168.178.220
+ping <HA_HOST>
 
 # Traceroute
-traceroute 192.168.178.212
+traceroute <INFLUX_HOST>
 
 # Offene Verbindungen und lauschende Ports
 ss -tulpn
 
 # Portscann eines Hosts (Diagnose)
-nmap -p 1-1000 192.168.178.220
+nmap -p 1-1000 <HA_HOST>
 
 # SMB-Share mounten (NAS, SMB 2.0 erforderlich)
-mount -t cifs //192.168.178.250/share /mnt/nas -o vers=2.0,username=<user>
+mount -t cifs //<NAS_IP>/share /mnt/nas -o vers=2.0,username=<user>
 
 # Aktuellen NFS/SMB-Mount prüfen
 mount | grep cifs

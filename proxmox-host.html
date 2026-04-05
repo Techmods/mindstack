@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proxmox Host</title>
+    <meta
+      name="description"
+      content="Mindstack Ops Cheatsheet – schnelle Befehlsreferenz als statische, responsive Seite."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body class="page-shell page-section">
+    <div class="page">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <a href="index.html" aria-label="Zur Startseite">
+            <span><span class="brand-dot"></span> MindStack Ops</span>
+          </a>
+        </div>
+        <nav class="site-nav">
+          <div class="search-wrap">
+            <input
+              type="search"
+              class="search-input"
+              id="global-search"
+              placeholder="Suchen (Befehle, Abschnitte, Seiten)..."
+              aria-label="Globale Suche"
+            />
+            <div class="search-results" id="search-results" aria-live="polite"></div>
+          </div>
+          <button class="button" id="layout-toggle" type="button">Layout: Zentriert</button>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">Umgebung</p>
+          <h1>Proxmox Host</h1>
+          <p class="lede">Zugang:   
+Web-UI:   
+Proxmox-Version: 
+
+---
+
+Systemanalyse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+VM-Verwaltung (KVM/QEMU)
+
+VMs werden mit  gesteuert. Jede VM hat ein</p>
+          <div class="meta">
+            <span>Stand: 2026-04</span>
+            <span>Build: 05.04.2026, 19:04</span>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="toc">
+          <div class="toc-desktop">
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation"><a href="proxmox-host.html" class="is-active">Proxmox Host</a>
+<a href="vps-stack-contabo.html" class="">VPS Stack (Contabo)</a>
+<a href="wireguard.html" class="">WireGuard</a>
+<a href="home-assistant.html" class="">Home Assistant</a>
+<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
+<a href="influxdb.html" class="">InfluxDB</a>
+<a href="grafana.html" class="">Grafana</a>
+<a href="git--github.html" class="">Git &amp; GitHub</a>
+<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
+<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
+            <details class="toc-sections" open>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis"><ul class="toc-list">
+<li class="toc-item level-3"><a href="#systemanalyse">Systemanalyse</a></li>
+<li class="toc-item level-3"><a href="#vm-verwaltung-kvmqemu">VM-Verwaltung (KVM/QEMU)</a></li>
+<li class="toc-item level-3"><a href="#container-verwaltung-lxc">Container-Verwaltung (LXC)</a></li>
+<li class="toc-item level-3"><a href="#in-container-einsteigen--verlassen">In Container einsteigen / verlassen</a></li>
+<li class="toc-item level-3"><a href="#speicher--storage">Speicher &amp; Storage</a></li>
+<li class="toc-item level-3"><a href="#netzwerk-proxmox">Netzwerk (Proxmox)</a></li>
+<li class="toc-item level-3"><a href="#backup--restore">Backup &amp; Restore</a></li>
+<li class="toc-item level-3"><a href="#updates--repositories">Updates &amp; Repositories</a></li>
+<li class="toc-item level-3"><a href="#logs--monitoring-proxmox">Logs &amp; Monitoring (Proxmox)</a></li>
+</ul></nav>
+              </div>
+            </details>
+          </div>
+          <details class="toc-mobile">
+            <summary>Inhalt anzeigen</summary>
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation mobil"><a href="proxmox-host.html" class="is-active">Proxmox Host</a>
+<a href="vps-stack-contabo.html" class="">VPS Stack (Contabo)</a>
+<a href="wireguard.html" class="">WireGuard</a>
+<a href="home-assistant.html" class="">Home Assistant</a>
+<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
+<a href="influxdb.html" class="">InfluxDB</a>
+<a href="grafana.html" class="">Grafana</a>
+<a href="git--github.html" class="">Git &amp; GitHub</a>
+<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
+<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
+            <details class="toc-sections" open>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter-mobile"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern mobil"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis mobil"><ul class="toc-list">
+<li class="toc-item level-3"><a href="#systemanalyse">Systemanalyse</a></li>
+<li class="toc-item level-3"><a href="#vm-verwaltung-kvmqemu">VM-Verwaltung (KVM/QEMU)</a></li>
+<li class="toc-item level-3"><a href="#container-verwaltung-lxc">Container-Verwaltung (LXC)</a></li>
+<li class="toc-item level-3"><a href="#in-container-einsteigen--verlassen">In Container einsteigen / verlassen</a></li>
+<li class="toc-item level-3"><a href="#speicher--storage">Speicher &amp; Storage</a></li>
+<li class="toc-item level-3"><a href="#netzwerk-proxmox">Netzwerk (Proxmox)</a></li>
+<li class="toc-item level-3"><a href="#backup--restore">Backup &amp; Restore</a></li>
+<li class="toc-item level-3"><a href="#updates--repositories">Updates &amp; Repositories</a></li>
+<li class="toc-item level-3"><a href="#logs--monitoring-proxmox">Logs &amp; Monitoring (Proxmox)</a></li>
+</ul></nav>
+              </div>
+            </details>
+          </details>
+        </aside>
+
+        <main class="content" id="content"><p><strong>Zugang:</strong> <code>ssh root@&lt;PROXMOX_HOST&gt;</code><br>
+<strong>Web-UI:</strong> <code>https://&lt;PROXMOX_HOST&gt;:8006</code><br>
+<strong>Proxmox-Version:</strong> <code>pve-manager/8.4.16</code></p>
+<hr>
+<h3 id="systemanalyse" tabindex="-1">Systemanalyse</h3>
+<pre><code class="language-bash"># Proxmox-Version und installierte Pakete
+pveversion --verbose
+</code></pre>
+<pre><code class="language-bash"># Systemlaufzeit, Load Average
+uptime
+</code></pre>
+<pre><code class="language-bash"># RAM-Übersicht (human-readable)
+free -h
+</code></pre>
+<pre><code class="language-bash"># RAM-Verbrauch pro Prozess (nach RAM sortiert, Top 20)
+ps aux --sort=-%mem | head -n 20
+</code></pre>
+<pre><code class="language-bash"># Interaktive Prozessübersicht
+htop
+</code></pre>
+<pre><code class="language-bash"># top nach RAM-Verbrauch sortiert starten
+top -o %MEM
+</code></pre>
+<pre><code class="language-bash"># CPU- und RAM-Ressourcen aller Gäste auf einen Blick
+pvesh get /cluster/resources --type vm
+</code></pre>
+<pre><code class="language-bash"># Festplattenauslastung (alle Mounts)
+df -h
+</code></pre>
+<pre><code class="language-bash"># Blockgeräte und Partitionen anzeigen
+lsblk
+</code></pre>
+<pre><code class="language-bash"># Disk-I/O-Statistiken (1-Sekunden-Intervall)
+iostat -x 1
+</code></pre>
+<pre><code class="language-bash"># Kernel-Meldungen (letzte 20 Einträge)
+dmesg | tail -20
+</code></pre>
+<pre><code class="language-bash"># Kritische Systemfehler aus dem Journal
+journalctl -xe -p 3 -n 50
+</code></pre>
+<pre><code class="language-bash"># Proxmox eigener Performance-Test
+pveperf
+</code></pre>
+<hr>
+<h3 id="vm-verwaltung-kvmqemu" tabindex="-1">VM-Verwaltung (KVM/QEMU)</h3>
+<p>VMs werden mit <code>qm</code> gesteuert. Jede VM hat eine numerische VMID (z.B. 101 für HAOS).</p>
+<pre><code class="language-bash"># Alle VMs auflisten (Status, RAM, Disk, PID)
+qm list
+</code></pre>
+<pre><code class="language-bash"># Status einer einzelnen VM abfragen
+qm status 101
+</code></pre>
+<pre><code class="language-bash"># VM starten
+qm start 101
+</code></pre>
+<pre><code class="language-bash"># VM sauber herunterfahren (ACPI-Signal, wie &quot;Herunterfahren&quot; drücken)
+qm stop 101
+</code></pre>
+<pre><code class="language-bash"># VM hart abwürgen (sofortiger Stopp, kein sauberes Shutdown)
+qm reset 101
+</code></pre>
+<pre><code class="language-bash"># VM neu starten
+qm reboot 101
+</code></pre>
+<pre><code class="language-bash"># Konfiguration einer VM anzeigen
+qm config 101
+</code></pre>
+<pre><code class="language-bash"># RAM einer laufenden VM ändern (in MB, wirkt erst nach Neustart)
+qm set 101 --memory 6144
+</code></pre>
+<pre><code class="language-bash"># QEMU Monitor öffnen (Low-Level-Diagnose, z.B. balloon-Status)
+qm monitor 101
+# Im Monitor: info balloon   → zeigt tatsächlich genutzten RAM
+# Im Monitor: q              → Monitor verlassen
+</code></pre>
+<pre><code class="language-bash"># VM klonen (NEWID = neue VMID, NAME = neuer Hostname)
+qm clone 101 150 --name haos-clone
+</code></pre>
+<pre><code class="language-bash"># VM löschen (muss gestoppt sein)
+qm destroy 101
+</code></pre>
+<pre><code class="language-bash"># Snapshot erstellen
+qm snapshot 101 snap-$(date +%Y%m%d) --description &quot;vor RAM-Änderung&quot;
+</code></pre>
+<pre><code class="language-bash"># Snapshot auflisten
+qm listsnapshot 101
+</code></pre>
+<pre><code class="language-bash"># Snapshot wiederherstellen
+qm rollback 101 snap-20260401
+</code></pre>
+<hr>
+<h3 id="container-verwaltung-lxc" tabindex="-1">Container-Verwaltung (LXC)</h3>
+<p>LXC-Container werden mit <code>pct</code> gesteuert. Leichter als VMs, kein eigener Kernel.</p>
+<pre><code class="language-bash"># Alle Container auflisten
+pct list
+</code></pre>
+<pre><code class="language-bash"># Status eines Containers
+pct status 210
+</code></pre>
+<pre><code class="language-bash"># Container starten
+pct start 210
+</code></pre>
+<pre><code class="language-bash"># Container stoppen
+pct stop 210
+</code></pre>
+<pre><code class="language-bash"># Container neu starten
+pct reboot 210
+</code></pre>
+<pre><code class="language-bash"># Konfiguration anzeigen
+pct config 210
+</code></pre>
+<pre><code class="language-bash"># RAM eines Containers ändern (in MB, bei LXC ohne Neustart möglich)
+pct set 210 --memory 768
+</code></pre>
+<pre><code class="language-bash"># Container löschen (muss gestoppt sein)
+pct destroy 210
+</code></pre>
+<pre><code class="language-bash"># Datei vom Host in den Container kopieren
+pct push 210 /root/datei.txt /root/datei.txt
+</code></pre>
+<pre><code class="language-bash"># Datei aus dem Container auf den Host holen
+pct pull 210 /root/datei.txt /root/datei.txt
+</code></pre>
+<hr>
+<h3 id="in-container-einsteigen--verlassen" tabindex="-1">In Container einsteigen / verlassen</h3>
+<p>Das ist einer der häufigsten Stolperpunkte. Hier die drei Wege:</p>
+<pre><code class="language-bash"># Weg 1: direkt einsteigen (interaktive Shell im Container)
+# Du bist danach &quot;inside&quot; des Containers, prompt wechselt z.B. zu root@influxdb
+pct enter 210
+</code></pre>
+<pre><code class="language-bash"># Verlassen: einfach
+exit
+</code></pre>
+<pre><code class="language-bash"># Weg 2: einzelnen Befehl im Container ausführen, ohne reinzugehen
+# Nützlich für schnelle Checks von außen
+pct exec 210 -- free -m
+pct exec 210 -- systemctl status influxdb
+pct exec 210 -- bash -c &quot;df -h &amp;&amp; free -m&quot;
+</code></pre>
+<pre><code class="language-bash"># Weg 3: bash explizit starten (wenn Shell nicht automatisch stimmt)
+pct exec 210 -- bash
+</code></pre>
+<pre><code class="language-bash"># Verlassen (bei Weg 2/3 aus bash):
+exit
+# oder Tastenkürzel:
+Ctrl+D
+</code></pre>
+<blockquote>
+<p><strong>Merkhilfe:</strong><br>
+<code>pct enter</code> = du gehst rein, bleibst drin bis <code>exit</code><br>
+<code>pct exec</code> = du rufst was von außen auf, kommst automatisch zurück</p>
+</blockquote>
+<hr>
+<h3 id="speicher--storage" tabindex="-1">Speicher &amp; Storage</h3>
+<pre><code class="language-bash"># Alle konfigurierten Storages und deren Füllstand
+pvesm status
+</code></pre>
+<pre><code class="language-bash"># Inhalt eines Storages auflisten (z.B. local-lvm)
+pvesm list local-lvm
+</code></pre>
+<pre><code class="language-bash"># LVM Physical Volumes anzeigen
+pvs
+</code></pre>
+<pre><code class="language-bash"># LVM Volume Groups anzeigen
+vgs
+</code></pre>
+<pre><code class="language-bash"># LVM Logical Volumes anzeigen (alle Disks der VMs/CTs)
+lvs
+</code></pre>
+<pre><code class="language-bash"># Größe eines LV anzeigen (spezifisch)
+lvdisplay /dev/pve/vm-101-disk-1
+</code></pre>
+<pre><code class="language-bash"># ZFS Pool-Status (falls ZFS genutzt)
+zpool status
+</code></pre>
+<pre><code class="language-bash"># ZFS Datasets auflisten
+zfs list
+</code></pre>
+<pre><code class="language-bash"># Speichernutzung und freier Platz eines Datasets
+zfs get used,available pve/data
+</code></pre>
+<pre><code class="language-bash"># Disk-Images und deren Größe
+du -sh /var/lib/vz/images/*
+</code></pre>
+<hr>
+<h3 id="netzwerk-proxmox" tabindex="-1">Netzwerk (Proxmox)</h3>
+<pre><code class="language-bash"># Alle Netzwerkinterfaces und IPs
+ip a
+</code></pre>
+<pre><code class="language-bash"># Bridge-Konfiguration anzeigen (vmbr0 etc.)
+brctl show
+</code></pre>
+<pre><code class="language-bash"># Netzwerkkonfiguration (statisch in Datei)
+cat /etc/network/interfaces
+</code></pre>
+<pre><code class="language-bash"># Netzwerk-Dienst neu starten (Vorsicht bei Remote-Zugang!)
+systemctl restart networking
+</code></pre>
+<pre><code class="language-bash"># Offene Ports und lauschende Dienste
+ss -tulpn
+</code></pre>
+<pre><code class="language-bash"># Firewall-Status (Proxmox-eigene Firewall)
+pve-firewall status
+</code></pre>
+<pre><code class="language-bash"># Firewall-Regeln kompilieren und prüfen
+pve-firewall compile
+</code></pre>
+<pre><code class="language-bash"># Paketmitschnitt auf Bridge (Diagnose)
+tcpdump -i vmbr0 -n host &lt;HA_HOST&gt;
+</code></pre>
+<hr>
+<h3 id="backup--restore" tabindex="-1">Backup &amp; Restore</h3>
+<pre><code class="language-bash"># Snapshot-Backup einer VM in lokalen Storage
+vzdump 101 --mode snapshot --compress zstd --storage local
+</code></pre>
+<pre><code class="language-bash"># Snapshot-Backup eines Containers
+vzdump 210 --mode snapshot --compress zstd --storage local
+</code></pre>
+<pre><code class="language-bash"># Alle VMs und Container sichern
+vzdump --all 1 --mode snapshot --compress zstd --storage local
+</code></pre>
+<pre><code class="language-bash"># VM aus Backup wiederherstellen
+qmrestore /var/lib/vz/dump/vzdump-qemu-101-*.vma.zst 101
+</code></pre>
+<pre><code class="language-bash"># Container aus Backup wiederherstellen
+pct restore 210 /var/lib/vz/dump/vzdump-lxc-210-*.tar.zst --storage local-lvm
+</code></pre>
+<pre><code class="language-bash"># Manuelles Backup InfluxDB-Daten (im Container ausführen)
+influx backup --bucket homeassistant /backup/influxdb/$(date +%Y%m%d)
+</code></pre>
+<pre><code class="language-bash"># Manuelles Backup Grafana (im Container ausführen)
+tar -czf /backup/grafana-$(date +%Y%m%d).tar.gz /etc/grafana/ /var/lib/grafana/
+</code></pre>
+<hr>
+<h3 id="updates--repositories" tabindex="-1">Updates &amp; Repositories</h3>
+<pre><code class="language-bash"># System aktualisieren
+apt update &amp;&amp; apt dist-upgrade -y
+</code></pre>
+<pre><code class="language-bash"># Nur Sicherheitsupdates
+apt-get upgrade --with-new-pkgs
+</code></pre>
+<pre><code class="language-bash"># Enterprise-Repo deaktivieren (kein Abo)
+# Datei bearbeiten: /etc/apt/sources.list.d/pve-enterprise.list
+# Zeile auskommentieren oder ersetzen durch:
+# deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
+</code></pre>
+<pre><code class="language-bash"># No-Subscription-Repo prüfen
+cat /etc/apt/sources.list.d/pve-no-subscription.list
+</code></pre>
+<pre><code class="language-bash"># Upgrade-Pfad von Proxmox 7 auf 8 prüfen
+pve7to8 --full
+</code></pre>
+<hr>
+<h3 id="logs--monitoring-proxmox" tabindex="-1">Logs &amp; Monitoring (Proxmox)</h3>
+<pre><code class="language-bash"># Task-Log live verfolgen (alle laufenden und abgeschlossenen Tasks)
+tail -f /var/log/pve/tasks/index
+</code></pre>
+<pre><code class="language-bash"># PVE-Cluster-Dienst-Log
+journalctl -u pve-cluster -f
+</code></pre>
+<pre><code class="language-bash"># PVE-Daemon-Log (Hauptdienst)
+journalctl -u pvedaemon -f
+</code></pre>
+<pre><code class="language-bash"># Firewall-Log
+cat /var/log/pve/firewall.log
+</code></pre>
+<pre><code class="language-bash"># Alle Ressourcen im Cluster (VMs, CTs, Storage, Nodes)
+pvesh get /cluster/resources
+</code></pre>
+<pre><code class="language-bash"># Ressourcen gefiltert nach VMs
+pvesh get /cluster/resources --type vm
+</code></pre>
+<pre><code class="language-bash"># Node-Details (CPU, RAM, Disk eines Nodes)
+pvesh get /nodes/pve/status
+</code></pre>
+<hr>
+</main>
+      </section>
+
+      <footer class="footer">
+        <span>Static Cheatsheet • GitHub Pages ready</span>
+      </footer>
+    </div>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mindstack Ops Cheatsheet</title>
+    <title>System allgemein (Linux)</title>
     <meta
       name="description"
       content="Mindstack Ops Cheatsheet – schnelle Befehlsreferenz als statische, responsive Seite."
@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  <body class="page-shell page-index">
+  <body class="page-shell page-section">
     <div class="page">
       <header class="site-header">
         <div class="brand-lockup">
@@ -41,11 +41,9 @@
 
       <section class="hero">
         <div class="hero-inner">
-          <p class="eyebrow">Startseite</p>
-          <h1>Mindstack Ops Cheatsheet</h1>
-          <p class="lede">Universelle Befehlsreferenz für die gesamte Mindstack-Infrastruktur.  
- Suchbar per  / . Jede Sektion hat einen Anker-Link.  
- Wächst mit den Aufgaben. Stand: 2026-04.</p>
+          <p class="eyebrow">Umgebung</p>
+          <h1>System allgemein (Linux)</h1>
+          <p class="lede">---</p>
           <div class="meta">
             <span>Stand: 2026-04</span>
             <span>Build: 05.04.2026, 19:04</span>
@@ -67,9 +65,9 @@
 <a href="grafana.html" class="">Grafana</a>
 <a href="git--github.html" class="">Git &amp; GitHub</a>
 <a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
-<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="system-allgemein-linux.html" class="is-active">System allgemein (Linux)</a>
 <a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
-            <details class="toc-sections" >
+            <details class="toc-sections" open>
               <summary>Abschnitte</summary>
               <input
                 type="search"
@@ -79,7 +77,7 @@
                 aria-label="Abschnitte filtern"
               />
               <div class="toc-scroll">
-                <nav aria-label="Abschnittsverzeichnis"><p class="toc-empty">Abschnitte siehe Seiten.</p></nav>
+                <nav aria-label="Abschnittsverzeichnis"><p class="toc-empty">Keine Abschnitte gefunden.</p></nav>
               </div>
             </details>
           </div>
@@ -95,9 +93,9 @@
 <a href="grafana.html" class="">Grafana</a>
 <a href="git--github.html" class="">Git &amp; GitHub</a>
 <a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
-<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="system-allgemein-linux.html" class="is-active">System allgemein (Linux)</a>
 <a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
-            <details class="toc-sections" >
+            <details class="toc-sections" open>
               <summary>Abschnitte</summary>
               <input
                 type="search"
@@ -107,248 +105,78 @@
                 aria-label="Abschnitte filtern mobil"
               />
               <div class="toc-scroll">
-                <nav aria-label="Abschnittsverzeichnis mobil"><p class="toc-empty">Abschnitte siehe Seiten.</p></nav>
+                <nav aria-label="Abschnittsverzeichnis mobil"><p class="toc-empty">Keine Abschnitte gefunden.</p></nav>
               </div>
             </details>
           </details>
         </aside>
 
-        <main class="content" id="content"><a class="page-card" href="proxmox-host.html">
-      <h3 class="page-card-title">Proxmox Host</h3>
-      <p class="page-card-snippet">Zugang:   
-Web-UI:   
-Proxmox-Version: 
-
----
-
-Systemanalyse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-VM-Verwaltung (KVM/QEMU)
-
-VMs werden mit  gesteuert. Jede VM hat ein</p>
-    </a>
-<a class="page-card" href="vps-stack-contabo.html">
-      <h3 class="page-card-title">VPS Stack (Contabo)</h3>
-      <p class="page-card-snippet">Host:   
-WireGuard-IP:   
-Stack-Verzeichnis:   
-GitHub-Repo: 
-
----
-
-Verbindung &amp; Zugang
-
-
-
-
-
-
-
-| Service | Adresse | Zugang |
-|---|---|---|
-| n8n | https://&lt;N8N</p>
-    </a>
-<a class="page-card" href="wireguard.html">
-      <h3 class="page-card-title">WireGuard</h3>
-      <p class="page-card-snippet">Server:  (VPS)  
-Peers: PC  | S25 Ultra  | Android Tablet 
-
-
-
-
-
-
-
-
-
-
-
-
-
-WireGuard läuft auf dem VPS-Host direkt, nicht im Docker-Stack.  
-Alle WireGuard-gebunde</p>
-    </a>
-<a class="page-card" href="home-assistant.html">
-      <h3 class="page-card-title">Home Assistant</h3>
-      <p class="page-card-snippet">VM: 101 | IP:  | RAM: 8192 MB  
-Web-UI: http://&lt;HA_HOST:8123  
-USB-Passthrough: SONOFF ZBDongle-P (Zigbee-Koordinator)
-
----
-
-Zugang &amp; Shell
-
-
-
-
-
-
-
----
-
-Konfigur</p>
-    </a>
-<a class="page-card" href="zigbee--zigbee2mqtt.html">
-      <h3 class="page-card-title">Zigbee / Zigbee2MQTT</h3>
-      <p class="page-card-snippet">Koordinator: SONOFF ZBDongle-P (USB-Passthrough in VM 101)  
-Zugang: Zigbee2MQTT läuft als HAOS Add-on
-
-
-
-
-
-
-
-IKEA-Geräte sind konservativ bei Routenwechseln.  </p>
-    </a>
-<a class="page-card" href="influxdb.html">
-      <h3 class="page-card-title">InfluxDB</h3>
-      <p class="page-card-snippet">CT: 210 | IP:  | Port: 8086  
-Web-UI: http://&lt;INFLUX_HOST:8086  
-Org:  | Bucket:  | Retention: 43800h (5 Jahre)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Flux-Query Grundstruktur:
-
-
-Gra</p>
-    </a>
-<a class="page-card" href="grafana.html">
-      <h3 class="page-card-title">Grafana</h3>
-      <p class="page-card-snippet">CT: 211 | IP:  | Port: 3000  
-Web-UI: http://&lt;GRAFANA_HOST:3000
-
-
-
-
-
-
-
-
-
-
-
-
-
-Datasource-Konfiguration (InfluxDB):
-
-
----</p>
-    </a>
-<a class="page-card" href="git--github.html">
-      <h3 class="page-card-title">Git &amp; GitHub</h3>
-      <p class="page-card-snippet">Repo VPS-Stack:   
-Authentifizierung: SSH-Key auf VPS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----</p>
-    </a>
-<a class="page-card" href="netzwerk-allgemein.html">
-      <h3 class="page-card-title">Netzwerk allgemein</h3>
-      <p class="page-card-snippet">Router: Fritz!Box 7690 |   
-Subnetz:   
-NAS: Buffalo LinkStation &quot;Datengrab&quot; |  | SMB 2.0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----</p>
-    </a>
-<a class="page-card" href="system-allgemein-linux.html">
-      <h3 class="page-card-title">System allgemein (Linux)</h3>
-      <p class="page-card-snippet">---</p>
-    </a>
-<a class="page-card" href="glossar--konzepte.html">
-      <h3 class="page-card-title">Glossar / Konzepte</h3>
-      <p class="page-card-snippet">| Begriff | Bedeutung |
-|---|---|
-|  | Proxmox Container Tool — steuert LXC-Container |
-|  | QEMU Manager — steuert KVM/QEMU-VMs |
-|  | Proxmox API-Shell — dire</p>
-    </a></main>
+        <main class="content" id="content"><pre><code class="language-bash"># Aktuellen Benutzer und Hostname
+whoami &amp;&amp; hostname
+</code></pre>
+<pre><code class="language-bash"># Betriebssystem-Info
+cat /etc/os-release
+</code></pre>
+<pre><code class="language-bash"># Kernel-Version
+uname -r
+</code></pre>
+<pre><code class="language-bash"># Laufende Dienste auflisten
+systemctl list-units --type=service --state=running
+</code></pre>
+<pre><code class="language-bash"># Dienst starten / stoppen / neu starten / Status
+systemctl start &lt;dienst&gt;
+systemctl stop &lt;dienst&gt;
+systemctl restart &lt;dienst&gt;
+systemctl status &lt;dienst&gt;
+</code></pre>
+<pre><code class="language-bash"># Dienst beim Boot aktivieren / deaktivieren
+systemctl enable &lt;dienst&gt;
+systemctl disable &lt;dienst&gt;
+</code></pre>
+<pre><code class="language-bash"># Cron-Jobs des aktuellen Benutzers
+crontab -l
+</code></pre>
+<pre><code class="language-bash"># Cron-Jobs bearbeiten
+crontab -e
+</code></pre>
+<pre><code class="language-bash"># Offene Dateien eines Prozesses
+lsof -p &lt;PID&gt;
+</code></pre>
+<pre><code class="language-bash"># Prozess-PID nach Name finden
+pgrep -a &lt;name&gt;
+</code></pre>
+<pre><code class="language-bash"># Prozess beenden
+kill &lt;PID&gt;
+kill -9 &lt;PID&gt;   # hart, sofort
+</code></pre>
+<pre><code class="language-bash"># Festplattennutzung eines Verzeichnisses
+du -sh /var/log
+</code></pre>
+<pre><code class="language-bash"># Größte Verzeichnisse finden
+du -sh /* 2&gt;/dev/null | sort -rh | head -10
+</code></pre>
+<pre><code class="language-bash"># Datei suchen
+find / -name &quot;*.log&quot; -newer /tmp/ref 2&gt;/dev/null
+</code></pre>
+<pre><code class="language-bash"># Text in Dateien suchen
+grep -r &quot;influxdb&quot; /etc/
+</code></pre>
+<pre><code class="language-bash"># Dateiinhalt anzeigen
+cat /etc/hosts
+less /var/log/syslog
+</code></pre>
+<pre><code class="language-bash"># Archiv erstellen
+tar czf archiv.tar.gz /pfad/zum/verzeichnis
+</code></pre>
+<pre><code class="language-bash"># Archiv entpacken
+tar xzf archiv.tar.gz
+</code></pre>
+<pre><code class="language-bash"># Berechtigungen setzen
+chmod 600 /etc/wireguard/wg0.conf
+chown -R 1000:1000 ~/openclaw-data
+</code></pre>
+<hr>
+</main>
       </section>
 
       <footer class="footer">

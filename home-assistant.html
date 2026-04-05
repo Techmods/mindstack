@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mindstack Ops Cheatsheet</title>
+    <title>Home Assistant</title>
     <meta
       name="description"
       content="Mindstack Ops Cheatsheet – schnelle Befehlsreferenz als statische, responsive Seite."
@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  <body class="page-shell page-index">
+  <body class="page-shell page-section">
     <div class="page">
       <header class="site-header">
         <div class="brand-lockup">
@@ -41,164 +41,9 @@
 
       <section class="hero">
         <div class="hero-inner">
-          <p class="eyebrow">Startseite</p>
-          <h1>Mindstack Ops Cheatsheet</h1>
-          <p class="lede">Universelle Befehlsreferenz für die gesamte Mindstack-Infrastruktur.  
- Suchbar per  / . Jede Sektion hat einen Anker-Link.  
- Wächst mit den Aufgaben. Stand: 2026-04.</p>
-          <div class="meta">
-            <span>Stand: 2026-04</span>
-            <span>Build: 05.04.2026, 19:04</span>
-            
-          </div>
-        </div>
-      </section>
-
-      <section class="layout">
-        <aside class="toc">
-          <div class="toc-desktop">
-            <div class="toc-title">Seiten</div>
-            <nav class="page-nav" aria-label="Seitennavigation"><a href="proxmox-host.html" class="">Proxmox Host</a>
-<a href="vps-stack-contabo.html" class="">VPS Stack (Contabo)</a>
-<a href="wireguard.html" class="">WireGuard</a>
-<a href="home-assistant.html" class="">Home Assistant</a>
-<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
-<a href="influxdb.html" class="">InfluxDB</a>
-<a href="grafana.html" class="">Grafana</a>
-<a href="git--github.html" class="">Git &amp; GitHub</a>
-<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
-<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
-<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
-            <details class="toc-sections" >
-              <summary>Abschnitte</summary>
-              <input
-                type="search"
-                class="toc-filter"
-                id="toc-filter"
-                placeholder="Abschnitte filtern..."
-                aria-label="Abschnitte filtern"
-              />
-              <div class="toc-scroll">
-                <nav aria-label="Abschnittsverzeichnis"><p class="toc-empty">Abschnitte siehe Seiten.</p></nav>
-              </div>
-            </details>
-          </div>
-          <details class="toc-mobile">
-            <summary>Inhalt anzeigen</summary>
-            <div class="toc-title">Seiten</div>
-            <nav class="page-nav" aria-label="Seitennavigation mobil"><a href="proxmox-host.html" class="">Proxmox Host</a>
-<a href="vps-stack-contabo.html" class="">VPS Stack (Contabo)</a>
-<a href="wireguard.html" class="">WireGuard</a>
-<a href="home-assistant.html" class="">Home Assistant</a>
-<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
-<a href="influxdb.html" class="">InfluxDB</a>
-<a href="grafana.html" class="">Grafana</a>
-<a href="git--github.html" class="">Git &amp; GitHub</a>
-<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
-<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
-<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
-            <details class="toc-sections" >
-              <summary>Abschnitte</summary>
-              <input
-                type="search"
-                class="toc-filter"
-                id="toc-filter-mobile"
-                placeholder="Abschnitte filtern..."
-                aria-label="Abschnitte filtern mobil"
-              />
-              <div class="toc-scroll">
-                <nav aria-label="Abschnittsverzeichnis mobil"><p class="toc-empty">Abschnitte siehe Seiten.</p></nav>
-              </div>
-            </details>
-          </details>
-        </aside>
-
-        <main class="content" id="content"><a class="page-card" href="proxmox-host.html">
-      <h3 class="page-card-title">Proxmox Host</h3>
-      <p class="page-card-snippet">Zugang:   
-Web-UI:   
-Proxmox-Version: 
-
----
-
-Systemanalyse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-VM-Verwaltung (KVM/QEMU)
-
-VMs werden mit  gesteuert. Jede VM hat ein</p>
-    </a>
-<a class="page-card" href="vps-stack-contabo.html">
-      <h3 class="page-card-title">VPS Stack (Contabo)</h3>
-      <p class="page-card-snippet">Host:   
-WireGuard-IP:   
-Stack-Verzeichnis:   
-GitHub-Repo: 
-
----
-
-Verbindung &amp; Zugang
-
-
-
-
-
-
-
-| Service | Adresse | Zugang |
-|---|---|---|
-| n8n | https://&lt;N8N</p>
-    </a>
-<a class="page-card" href="wireguard.html">
-      <h3 class="page-card-title">WireGuard</h3>
-      <p class="page-card-snippet">Server:  (VPS)  
-Peers: PC  | S25 Ultra  | Android Tablet 
-
-
-
-
-
-
-
-
-
-
-
-
-
-WireGuard läuft auf dem VPS-Host direkt, nicht im Docker-Stack.  
-Alle WireGuard-gebunde</p>
-    </a>
-<a class="page-card" href="home-assistant.html">
-      <h3 class="page-card-title">Home Assistant</h3>
-      <p class="page-card-snippet">VM: 101 | IP:  | RAM: 8192 MB  
+          <p class="eyebrow">Umgebung</p>
+          <h1>Home Assistant</h1>
+          <p class="lede">VM: 101 | IP:  | RAM: 8192 MB  
 Web-UI: http://&lt;HA_HOST:8123  
 USB-Passthrough: SONOFF ZBDongle-P (Zigbee-Koordinator)
 
@@ -215,140 +60,140 @@ Zugang &amp; Shell
 ---
 
 Konfigur</p>
-    </a>
-<a class="page-card" href="zigbee--zigbee2mqtt.html">
-      <h3 class="page-card-title">Zigbee / Zigbee2MQTT</h3>
-      <p class="page-card-snippet">Koordinator: SONOFF ZBDongle-P (USB-Passthrough in VM 101)  
-Zugang: Zigbee2MQTT läuft als HAOS Add-on
-
-
-
-
-
-
-
-IKEA-Geräte sind konservativ bei Routenwechseln.  </p>
-    </a>
-<a class="page-card" href="influxdb.html">
-      <h3 class="page-card-title">InfluxDB</h3>
-      <p class="page-card-snippet">CT: 210 | IP:  | Port: 8086  
-Web-UI: http://&lt;INFLUX_HOST:8086  
-Org:  | Bucket:  | Retention: 43800h (5 Jahre)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Flux-Query Grundstruktur:
-
-
-Gra</p>
-    </a>
-<a class="page-card" href="grafana.html">
-      <h3 class="page-card-title">Grafana</h3>
-      <p class="page-card-snippet">CT: 211 | IP:  | Port: 3000  
-Web-UI: http://&lt;GRAFANA_HOST:3000
-
-
-
-
-
-
-
-
-
-
-
-
-
-Datasource-Konfiguration (InfluxDB):
-
-
----</p>
-    </a>
-<a class="page-card" href="git--github.html">
-      <h3 class="page-card-title">Git &amp; GitHub</h3>
-      <p class="page-card-snippet">Repo VPS-Stack:   
-Authentifizierung: SSH-Key auf VPS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----</p>
-    </a>
-<a class="page-card" href="netzwerk-allgemein.html">
-      <h3 class="page-card-title">Netzwerk allgemein</h3>
-      <p class="page-card-snippet">Router: Fritz!Box 7690 |   
-Subnetz:   
-NAS: Buffalo LinkStation &quot;Datengrab&quot; |  | SMB 2.0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----</p>
-    </a>
-<a class="page-card" href="system-allgemein-linux.html">
-      <h3 class="page-card-title">System allgemein (Linux)</h3>
-      <p class="page-card-snippet">---</p>
-    </a>
-<a class="page-card" href="glossar--konzepte.html">
-      <h3 class="page-card-title">Glossar / Konzepte</h3>
-      <p class="page-card-snippet">| Begriff | Bedeutung |
-|---|---|
-|  | Proxmox Container Tool — steuert LXC-Container |
-|  | QEMU Manager — steuert KVM/QEMU-VMs |
-|  | Proxmox API-Shell — dire</p>
-    </a></main>
+          <div class="meta">
+            <span>Stand: 2026-04</span>
+            <span>Build: 05.04.2026, 19:04</span>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="toc">
+          <div class="toc-desktop">
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation"><a href="proxmox-host.html" class="">Proxmox Host</a>
+<a href="vps-stack-contabo.html" class="">VPS Stack (Contabo)</a>
+<a href="wireguard.html" class="">WireGuard</a>
+<a href="home-assistant.html" class="is-active">Home Assistant</a>
+<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
+<a href="influxdb.html" class="">InfluxDB</a>
+<a href="grafana.html" class="">Grafana</a>
+<a href="git--github.html" class="">Git &amp; GitHub</a>
+<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
+<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
+            <details class="toc-sections" open>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis"><ul class="toc-list">
+<li class="toc-item level-3"><a href="#zugang--shell">Zugang &amp; Shell</a></li>
+<li class="toc-item level-3"><a href="#konfiguration--restart">Konfiguration &amp; Restart</a></li>
+<li class="toc-item level-3"><a href="#logs-home-assistant">Logs (Home Assistant)</a></li>
+</ul></nav>
+              </div>
+            </details>
+          </div>
+          <details class="toc-mobile">
+            <summary>Inhalt anzeigen</summary>
+            <div class="toc-title">Seiten</div>
+            <nav class="page-nav" aria-label="Seitennavigation mobil"><a href="proxmox-host.html" class="">Proxmox Host</a>
+<a href="vps-stack-contabo.html" class="">VPS Stack (Contabo)</a>
+<a href="wireguard.html" class="">WireGuard</a>
+<a href="home-assistant.html" class="is-active">Home Assistant</a>
+<a href="zigbee--zigbee2mqtt.html" class="">Zigbee / Zigbee2MQTT</a>
+<a href="influxdb.html" class="">InfluxDB</a>
+<a href="grafana.html" class="">Grafana</a>
+<a href="git--github.html" class="">Git &amp; GitHub</a>
+<a href="netzwerk-allgemein.html" class="">Netzwerk allgemein</a>
+<a href="system-allgemein-linux.html" class="">System allgemein (Linux)</a>
+<a href="glossar--konzepte.html" class="">Glossar / Konzepte</a></nav>
+            <details class="toc-sections" open>
+              <summary>Abschnitte</summary>
+              <input
+                type="search"
+                class="toc-filter"
+                id="toc-filter-mobile"
+                placeholder="Abschnitte filtern..."
+                aria-label="Abschnitte filtern mobil"
+              />
+              <div class="toc-scroll">
+                <nav aria-label="Abschnittsverzeichnis mobil"><ul class="toc-list">
+<li class="toc-item level-3"><a href="#zugang--shell">Zugang &amp; Shell</a></li>
+<li class="toc-item level-3"><a href="#konfiguration--restart">Konfiguration &amp; Restart</a></li>
+<li class="toc-item level-3"><a href="#logs-home-assistant">Logs (Home Assistant)</a></li>
+</ul></nav>
+              </div>
+            </details>
+          </details>
+        </aside>
+
+        <main class="content" id="content"><p><strong>VM:</strong> 101 | <strong>IP:</strong> <code>&lt;HA_HOST&gt;</code> | <strong>RAM:</strong> 8192 MB<br>
+<strong>Web-UI:</strong> http://&lt;HA_HOST&gt;:8123<br>
+<strong>USB-Passthrough:</strong> SONOFF ZBDongle-P (Zigbee-Koordinator)</p>
+<hr>
+<h3 id="zugang--shell" tabindex="-1">Zugang &amp; Shell</h3>
+<pre><code class="language-bash"># SSH in die HAOS-VM (über Proxmox-Host)
+# Methode 1: Proxmox Console (Web-UI → VM 101 → Console)
+</code></pre>
+<pre><code class="language-bash"># Methode 2: SSH direkt (wenn SSH-Add-on installiert)
+ssh root@&lt;HA_HOST&gt;
+</code></pre>
+<pre><code class="language-bash"># Methode 3: Terminal über Home Assistant Web-UI
+# Add-ons → Terminal &amp; SSH → Öffnen
+</code></pre>
+<hr>
+<h3 id="konfiguration--restart" tabindex="-1">Konfiguration &amp; Restart</h3>
+<pre><code class="language-bash"># Konfiguration auf Fehler prüfen (im HA Terminal)
+ha core check
+</code></pre>
+<pre><code class="language-bash"># Home Assistant neu starten
+ha core restart
+</code></pre>
+<pre><code class="language-bash"># Home Assistant stoppen / starten
+ha core stop
+ha core start
+</code></pre>
+<pre><code class="language-bash"># Add-on neu starten (Beispiel: Zigbee2MQTT)
+ha addons restart core_zigbee2mqtt
+</code></pre>
+<pre><code class="language-bash"># Systeminfo
+ha info
+ha host info
+</code></pre>
+<p><strong>Konfig-Dateien:</strong></p>
+<ul>
+<li><code>/config/configuration.yaml</code> — Hauptkonfiguration</li>
+<li><code>/config/secrets.yaml</code> — Tokens, Passwörter</li>
+<li><code>/config/automations.yaml</code> — Automatisierungen</li>
+</ul>
+<hr>
+<h3 id="logs-home-assistant" tabindex="-1">Logs (Home Assistant)</h3>
+<pre><code class="language-bash"># HA Core Logs
+ha core logs
+</code></pre>
+<pre><code class="language-bash"># InfluxDB-bezogene Einträge filtern
+ha core logs | grep influx
+</code></pre>
+<pre><code class="language-bash"># Add-on Logs
+ha addons logs core_zigbee2mqtt
+</code></pre>
+<pre><code class="language-bash"># Supervisor Log
+ha supervisor logs
+</code></pre>
+<blockquote>
+<p><code>persistent_notification</code> ist ein eingebauter Service.<br>
+Aufruf in Automationen: <code>persistent_notification.create</code> — nicht als <code>notify</code>-Platform konfigurieren.</p>
+</blockquote>
+<hr>
+</main>
       </section>
 
       <footer class="footer">
